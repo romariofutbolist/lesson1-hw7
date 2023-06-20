@@ -15,8 +15,9 @@ public class Main {
         int savesAmount = 15000;
         int total = 0;
         int month = 0;
-        while (total <= 2459000) {
-            total = total + savesAmount;
+        int target = 2459000;
+        while (total < target) {
+            total += savesAmount;
             month++;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + total);
         }
@@ -40,8 +41,9 @@ public class Main {
         int people = 12000000;
         float fertility = 17 / 1000f;
         float mortality = 8 / 1000f;
+        int target = 10;
         int year = 0;
-        while (year <= 10) {
+        while (year <= target) {
             System.out.println("Год " + year + ", численность населения составляет " + people);
             float peopleWereBorn = people * fertility;
             float peopleDied = people * mortality;
@@ -55,7 +57,8 @@ public class Main {
         int percent = 7;
         int total = 0;
         int month = 0;
-        while (total <= 12000000) {
+        int target = 12000000;
+        while (total < target) {
             total = total + total * percent / 100;
             total = total + savesAmount;
             month++;
@@ -68,7 +71,8 @@ public class Main {
         int percent = 7;
         int total = 0;
         int month = 0;
-        while (total <= 12000000) {
+        int target = 12000000;
+        while (total < target) {
             total = total + total * percent / 100;
             total = total + savesAmount;
             month++;
@@ -105,18 +109,11 @@ public class Main {
     public static void task7() {
         System.out.println("Задача 7");
         int firstFriday = 3;
-        int week = 7;
-        double fridayInTheWeek = (double) firstFriday % week;
-        double dayOfTheWeek;
-        for (int i = 1; i >= 1 && i <= 31; i++) {
-            dayOfTheWeek = (double) i % week;
-            if (fridayInTheWeek == dayOfTheWeek) {
-                System.out.println("Сегодня пятница, " + i + "-е число. Необходимо подготовить отчет");
-            } else {
-                System.out.println("Сегодня не пятница. " + i + "-е число. Работаем в штатном режиме");
+        int daysPerMonth = 31;
+        for (; firstFriday <= daysPerMonth; firstFriday +=7) {
+                System.out.println("Сегодня пятница, " + firstFriday + "-е число. Необходимо подготовить отчет");
             }
         }
-    }
     public static void task8() {
         System.out.println("Задача 8");
         int cometAppearance = 79;
